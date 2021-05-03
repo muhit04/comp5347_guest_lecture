@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script> <!-- import vue -->
+    <!-- Compiled and minified CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</head>
+<body>
+	<div>
+        <table id="example-1">
+            <thead>
+                <tr>
+                    <td>Year</td>
+                    <td>Female Wage</td>
+                    <td>Male Wage</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in items" :key="item.Year">
+                    <td>{{ item.Year }}</td>
+                    <td>{{ item.femalewage }}</td>
+                    <td>{{ item.malewage }}</td>
+                </tr>
+            </tbody>
+            
+        </table>
+      </div>
+	<script>
+        const dataItems = [
+                    { Year: 2004, femalewage: 21.04, malewage: 24.27 },
+                    { Year: 2005, femalewage: 21.89, malewage: 24.73 },
+                    { Year: 2006, femalewage: 22.37, malewage: 25.46 },
+                    { Year: 2007, femalewage: 24.26, malewage: 27.78 },
+                    { Year: 2008, femalewage: 24.65, malewage: 28.74 },
+                    { Year: 2009, femalewage: 25.42, malewage: 29.59 },
+                    { Year: 2010, femalewage: 26.75, malewage: 30.99 },
+                    { Year: 2011, femalewage: 27.73, malewage: 32.71 },
+                    { Year: 2012, femalewage: 28.84, malewage: 33.79 },
+                    { Year: 2013, femalewage: 29.5, malewage: 34.03 },
+                    { Year: 2014, femalewage: 32.63, malewage: 36.7 },
+                    { Year: 2015, femalewage: 33.46, malewage: 37 },
+                    { Year: 2016, femalewage: 33.96, malewage: 36.95 },
+                    { Year: 2017, femalewage: 35.65, malewage: 39.05 }
+                ];
+
+        var example1 = new Vue({
+            el: '#example-1',
+            data: {
+                items: dataItems
+            }
+            })
+	</script>
+</body>
+</html>
